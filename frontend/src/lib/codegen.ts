@@ -1,11 +1,8 @@
-/// <reference types="vite/client" />
-
+import { config } from '@/lib/config';
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
-export const endpoint = import.meta.env.VITE_GRAPHQL_URL || 'http://localhost:8000/graphql/';
-
-const config: CodegenConfig = {
-  schema: endpoint,
+const codegen: CodegenConfig = {
+  schema: config.graphqlEndpoint,
   overwrite: true,
   documents: ['./src/lib/graphql/{queries,mutations}.ts'],
   ignoreNoDocuments: true,
@@ -25,4 +22,4 @@ const config: CodegenConfig = {
   },
 };
 
-export default config;
+export default codegen;

@@ -62,7 +62,7 @@ export type MutationUpdateWorkstationArgs = {
 export type Query = {
   __typename?: 'Query';
   workstation?: Maybe<WorkstationType>;
-  workstations?: Maybe<Array<WorkstationType>>;
+  workstations: WorkstationConnection;
 };
 
 
@@ -70,9 +70,25 @@ export type QueryWorkstationArgs = {
   id?: InputMaybe<Scalars['Int']['input']>;
 };
 
+
+export type QueryWorkstationsArgs = {
+  page?: InputMaybe<Scalars['Int']['input']>;
+  pageSize?: InputMaybe<Scalars['Int']['input']>;
+};
+
 export type UpdateWorkstation = {
   __typename?: 'UpdateWorkstation';
   workstation?: Maybe<WorkstationType>;
+};
+
+export type WorkstationConnection = {
+  __typename?: 'WorkstationConnection';
+  hasNext: Scalars['Boolean']['output'];
+  hasPrevious: Scalars['Boolean']['output'];
+  page: Scalars['Int']['output'];
+  pageSize: Scalars['Int']['output'];
+  results: Array<WorkstationType>;
+  total: Scalars['Int']['output'];
 };
 
 export type WorkstationType = {
@@ -112,10 +128,13 @@ export type DeleteWorkstationMutationVariables = Exact<{
 
 export type DeleteWorkstationMutation = { __typename?: 'Mutation', deleteWorkstation?: { __typename?: 'DeleteWorkstation', success?: boolean | null } | null };
 
-export type WorkstationsQueryVariables = Exact<{ [key: string]: never; }>;
+export type WorkstationsQueryVariables = Exact<{
+  page: Scalars['Int']['input'];
+  pageSize: Scalars['Int']['input'];
+}>;
 
 
-export type WorkstationsQuery = { __typename?: 'Query', workstations?: Array<{ __typename?: 'WorkstationType', id: string, title: string, description?: string | null, ipAddress?: string | null, hasPc: boolean, createdAt: any, updatedAt: any }> | null };
+export type WorkstationsQuery = { __typename?: 'Query', workstations: { __typename?: 'WorkstationConnection', total: number, page: number, pageSize: number, hasNext: boolean, hasPrevious: boolean, results: Array<{ __typename?: 'WorkstationType', id: string, title: string, description?: string | null, ipAddress?: string | null, hasPc: boolean, createdAt: any, updatedAt: any }> } };
 
 export type WorkstationQueryVariables = Exact<{
   id: Scalars['Int']['input'];
@@ -188,15 +207,22 @@ export const DeleteWorkstationDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<DeleteWorkstationMutation, DeleteWorkstationMutationVariables>;
 export const WorkstationsDocument = new TypedDocumentString(`
-    query Workstations {
-  workstations {
-    id
-    title
-    description
-    ipAddress
-    hasPc
-    createdAt
-    updatedAt
+    query Workstations($page: Int!, $pageSize: Int!) {
+  workstations(page: $page, pageSize: $pageSize) {
+    total
+    page
+    pageSize
+    hasNext
+    hasPrevious
+    results {
+      id
+      title
+      description
+      ipAddress
+      hasPc
+      createdAt
+      updatedAt
+    }
   }
 }
     `) as unknown as TypedDocumentString<WorkstationsQuery, WorkstationsQueryVariables>;

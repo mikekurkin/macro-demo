@@ -3,10 +3,16 @@ import { CREATE_WORKSTATION, DELETE_WORKSTATION, UPDATE_WORKSTATION } from '@/li
 import { GET_WORKSTATION, GET_WORKSTATIONS } from '@/lib/graphql/queries';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-export const useWorkstations = () => {
+interface PaginationOptions {
+  page?: number;
+  pageSize?: number;
+}
+
+export const useWorkstations = ({ page = 1, pageSize = 10 }: PaginationOptions = {}) => {
   return useQuery({
-    queryKey: ['workstations'],
-    queryFn: () => execute(GET_WORKSTATIONS),
+    queryKey: ['workstations', page, pageSize],
+    queryFn: () => execute(GET_WORKSTATIONS, { page, pageSize }),
+    placeholderData: previousData => previousData,
   });
 };
 

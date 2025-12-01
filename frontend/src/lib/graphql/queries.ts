@@ -1,15 +1,22 @@
 import { graphql } from './codegen/gql';
 
 export const GET_WORKSTATIONS = graphql(`
-  query Workstations {
-    workstations {
-      id
-      title
-      description
-      ipAddress
-      hasPc
-      createdAt
-      updatedAt
+  query Workstations($page: Int!, $pageSize: Int!) {
+    workstations(page: $page, pageSize: $pageSize) {
+      total
+      page
+      pageSize
+      hasNext
+      hasPrevious
+      results {
+        id
+        title
+        description
+        ipAddress
+        hasPc
+        createdAt
+        updatedAt
+      }
     }
   }
 `);

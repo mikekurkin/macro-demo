@@ -26,11 +26,20 @@ type Mutation {
 
 type Query {
   workstation(id: Int): WorkstationType
-  workstations: [WorkstationType!]
+  workstations(page: Int = 1, pageSize: Int = 10): WorkstationConnection!
 }
 
 type UpdateWorkstation {
   workstation: WorkstationType
+}
+
+type WorkstationConnection {
+  hasNext: Boolean!
+  hasPrevious: Boolean!
+  page: Int!
+  pageSize: Int!
+  results: [WorkstationType!]!
+  total: Int!
 }
 
 type WorkstationType {

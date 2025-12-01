@@ -1,6 +1,5 @@
 import graphene
 from graphene_django import DjangoObjectType
-from django.contrib.auth import get_user_model
 from .models import Workstation
 
 class WorkstationType(DjangoObjectType):
@@ -9,12 +8,40 @@ class WorkstationType(DjangoObjectType):
         fields = '__all__'
 
 
+class WorkstationConnection(graphene.ObjectType):
+    results = graphene.List(graphene.NonNull(WorkstationType), required=True)
+    total = graphene.Int(required=True)
+    page = graphene.Int(required=True)
+    page_size = graphene.Int(required=True)
+    has_next = graphene.Boolean(required=True)
+    has_previous = graphene.Boolean(required=True)
+
+
 class Query(graphene.ObjectType):
-    workstations = graphene.List(graphene.NonNull(WorkstationType))
+    workstations = graphene.Field(
+        graphene.NonNull(WorkstationConnection),
+        page=graphene.Int(default_value=1),
+        page_size=graphene.Int(default_value=10),
+    )
     workstation = graphene.Field(WorkstationType, id=graphene.Int())
 
-    def resolve_workstations(self, info):
-        return Workstation.objects.all()
+    def resolve_workstations(self, info, page=1, page_size=10):
+        page = max(page, 1)
+        page_size = max(min(page_size, 50), 1)
+        queryset = Workstation.objects.all()
+        total = queryset.count()
+        start = (page - 1) * page_size
+        end = start + page_size
+        items = list(queryset[start:end])
+
+        return WorkstationConnection(
+            results=items,
+            total=total,
+            page=page,
+            page_size=page_size,
+            has_next=end < total,
+            has_previous=start > 0,
+        )
 
     def resolve_workstation(self, info, id):
         try:
