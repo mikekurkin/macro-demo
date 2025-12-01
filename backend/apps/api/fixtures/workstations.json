@@ -1,0 +1,355 @@
+[
+    {
+      "model": "api.workstation",
+      "pk": 1,
+      "fields": {
+        "title": "WS-010-001",
+        "description": "Автомат Pick-and-place (линия поверхностного монтажа)",
+        "ip_address": "10.0.0.21",
+        "created_at": "2025-12-01T09:00:00Z",
+        "updated_at": "2025-12-01T09:00:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 2,
+      "fields": {
+        "title": "WS-010-002",
+        "description": "Автомат Pick-and-place (высокоскоростной модуль)",
+        "ip_address": "10.0.0.22",
+        "created_at": "2025-12-01T09:01:00Z",
+        "updated_at": "2025-12-01T09:01:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 3,
+      "fields": {
+        "title": "WS-020-001",
+        "description": "Паяльная печь (рефлоу)",
+        "ip_address": "10.0.0.23",
+        "created_at": "2025-12-01T09:02:00Z",
+        "updated_at": "2025-12-01T09:02:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 4,
+      "fields": {
+        "title": "WS-020-002",
+        "description": "Паяльная печь (двухзонная)",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:03:00Z",
+        "updated_at": "2025-12-01T09:03:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 5,
+      "fields": {
+        "title": "WS-030-001",
+        "description": "Автомат оптической инспекции AOI",
+        "ip_address": "10.0.0.24",
+        "created_at": "2025-12-01T09:04:00Z",
+        "updated_at": "2025-12-01T09:04:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 6,
+      "fields": {
+        "title": "WS-030-002",
+        "description": "AOI инспекция — линия B",
+        "ip_address": "10.0.0.25",
+        "created_at": "2025-12-01T09:05:00Z",
+        "updated_at": "2025-12-01T09:05:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 7,
+      "fields": {
+        "title": "WS-040-001",
+        "description": "Рентгеновский инспекционный комплекс (BGA/µBGA)",
+        "ip_address": "10.0.0.26",
+        "created_at": "2025-12-01T09:06:00Z",
+        "updated_at": "2025-12-01T09:06:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 8,
+      "fields": {
+        "title": "WS-050-001",
+        "description": "Дозатор паяльной пасты",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:07:00Z",
+        "updated_at": "2025-12-01T09:07:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 9,
+      "fields": {
+        "title": "WS-050-002",
+        "description": "Трафаретный принтер пасты",
+        "ip_address": "10.0.0.27",
+        "created_at": "2025-12-01T09:08:00Z",
+        "updated_at": "2025-12-01T09:08:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 10,
+      "fields": {
+        "title": "WS-060-001",
+        "description": "Станция ручной пайки №1",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:09:00Z",
+        "updated_at": "2025-12-01T09:09:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 11,
+      "fields": {
+        "title": "WS-060-002",
+        "description": "Станция ручной пайки №2",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:10:00Z",
+        "updated_at": "2025-12-01T09:10:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 12,
+      "fields": {
+        "title": "WS-060-003",
+        "description": "Станция ручной пайки №3",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:11:00Z",
+        "updated_at": "2025-12-01T09:11:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 13,
+      "fields": {
+        "title": "WS-070-001",
+        "description": "Тестовый стенд ICT (In-Circuit Test)",
+        "ip_address": "10.0.0.28",
+        "created_at": "2025-12-01T09:12:00Z",
+        "updated_at": "2025-12-01T09:12:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 14,
+      "fields": {
+        "title": "WS-070-002",
+        "description": "Функциональный тестер изделий",
+        "ip_address": "10.0.0.29",
+        "created_at": "2025-12-01T09:13:00Z",
+        "updated_at": "2025-12-01T09:13:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 15,
+      "fields": {
+        "title": "WS-080-001",
+        "description": "Пресс для запрессовки коннекторов",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:14:00Z",
+        "updated_at": "2025-12-01T09:14:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 16,
+      "fields": {
+        "title": "WS-080-002",
+        "description": "Пресс-станция гидравлическая",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:15:00Z",
+        "updated_at": "2025-12-01T09:15:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 17,
+      "fields": {
+        "title": "WS-090-001",
+        "description": "Автомат сборки корпусов",
+        "ip_address": "10.0.0.30",
+        "created_at": "2025-12-01T09:16:00Z",
+        "updated_at": "2025-12-01T09:16:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 18,
+      "fields": {
+        "title": "WS-100-001",
+        "description": "Маркировочный лазер",
+        "ip_address": "10.0.0.31",
+        "created_at": "2025-12-01T09:17:00Z",
+        "updated_at": "2025-12-01T09:17:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 19,
+      "fields": {
+        "title": "WS-110-001",
+        "description": "Установка ультразвуковой очистки",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:18:00Z",
+        "updated_at": "2025-12-01T09:18:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 20,
+      "fields": {
+        "title": "WS-120-001",
+        "description": "Станция контроля качества (операторское рабочее место)",
+        "ip_address": "10.0.0.32",
+        "created_at": "2025-12-01T09:19:00Z",
+        "updated_at": "2025-12-01T09:19:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 21,
+      "fields": {
+        "title": "WS-120-002",
+        "description": "Контроль качества — линия B",
+        "ip_address": "10.0.0.33",
+        "created_at": "2025-12-01T09:20:00Z",
+        "updated_at": "2025-12-01T09:20:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 22,
+      "fields": {
+        "title": "WS-130-001",
+        "description": "Станция упаковки изделий",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:21:00Z",
+        "updated_at": "2025-12-01T09:21:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 23,
+      "fields": {
+        "title": "WS-140-001",
+        "description": "Автоматизированный склад компонентов",
+        "ip_address": "10.0.0.34",
+        "created_at": "2025-12-01T09:22:00Z",
+        "updated_at": "2025-12-01T09:22:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 24,
+      "fields": {
+        "title": "WS-140-002",
+        "description": "Склад готовой продукции (терминал учета)",
+        "ip_address": "10.0.0.35",
+        "created_at": "2025-12-01T09:23:00Z",
+        "updated_at": "2025-12-01T09:23:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 25,
+      "fields": {
+        "title": "WS-150-001",
+        "description": "Лабораторный микроскоп (анализ дефектов)",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:24:00Z",
+        "updated_at": "2025-12-01T09:24:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 26,
+      "fields": {
+        "title": "WS-150-002",
+        "description": "Станция измерений LCR",
+        "ip_address": "10.0.0.36",
+        "created_at": "2025-12-01T09:25:00Z",
+        "updated_at": "2025-12-01T09:25:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 27,
+      "fields": {
+        "title": "WS-160-001",
+        "description": "Пресс вакуумный (заливка компаундом)",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:26:00Z",
+        "updated_at": "2025-12-01T09:26:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 28,
+      "fields": {
+        "title": "WS-170-001",
+        "description": "Автомат установки клемм",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:27:00Z",
+        "updated_at": "2025-12-01T09:27:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 29,
+      "fields": {
+        "title": "WS-180-001",
+        "description": "Роботизированный узел сборки микромодулей",
+        "ip_address": "10.0.0.37",
+        "created_at": "2025-12-01T09:28:00Z",
+        "updated_at": "2025-12-01T09:28:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 30,
+      "fields": {
+        "title": "WS-180-002",
+        "description": "Роботизированная станция диспенсинга",
+        "ip_address": "10.0.0.38",
+        "created_at": "2025-12-01T09:29:00Z",
+        "updated_at": "2025-12-01T09:29:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 31,
+      "fields": {
+        "title": "WS-190-001",
+        "description": "Узел климатических испытаний",
+        "ip_address": "10.0.0.39",
+        "created_at": "2025-12-01T09:30:00Z",
+        "updated_at": "2025-12-01T09:30:00Z"
+      }
+    },
+    {
+      "model": "api.workstation",
+      "pk": 32,
+      "fields": {
+        "title": "WS-200-001",
+        "description": "Температурная камера (термоциклирование)",
+        "ip_address": null,
+        "created_at": "2025-12-01T09:31:00Z",
+        "updated_at": "2025-12-01T09:31:00Z"
+      }
+    }
+  ]
+
