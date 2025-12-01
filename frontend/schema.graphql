@@ -1,0 +1,44 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type CreateWorkstation {
+  workstation: WorkstationType
+}
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+type DeleteWorkstation {
+  success: Boolean
+}
+
+type Mutation {
+  createWorkstation(description: String, ipAddress: String, title: String!): CreateWorkstation
+  deleteWorkstation(id: Int!): DeleteWorkstation
+  updateWorkstation(description: String, id: Int!, ipAddress: String, title: String): UpdateWorkstation
+}
+
+type Query {
+  workstation(id: Int): WorkstationType
+  workstations: [WorkstationType!]
+}
+
+type UpdateWorkstation {
+  workstation: WorkstationType
+}
+
+type WorkstationType {
+  createdAt: DateTime!
+  description: String
+  hasPc: Boolean!
+  id: ID!
+  ipAddress: String
+  title: String!
+  updatedAt: DateTime!
+}
