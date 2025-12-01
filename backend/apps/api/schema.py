@@ -10,7 +10,7 @@ class WorkstationType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-    workstations = graphene.List(WorkstationType)
+    workstations = graphene.List(graphene.NonNull(WorkstationType))
     workstation = graphene.Field(WorkstationType, id=graphene.Int())
 
     def resolve_workstations(self, info):
