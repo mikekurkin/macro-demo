@@ -85,10 +85,11 @@ class UpdateWorkstation(graphene.Mutation):
             if description is not None:
                 workstation.description = description
             if ip_address is not None:
-                workstation.ip_address = ip_address
+                workstation.ip_address = None if ip_address is '' else ip_address
+
 
             workstation.save()
-            return UpdateWorkstationk(workstation=workstation)
+            return UpdateWorkstation(workstation=workstation)
         except Workstation.DoesNotExist:
             raise Exception('Workstation not found')
 
