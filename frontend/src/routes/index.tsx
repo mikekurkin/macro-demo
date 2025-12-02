@@ -1,5 +1,6 @@
 import RootLayout from '@/components/layouts/RootLayout';
 import ErrorPage from '@/pages/ErrorPage';
+import WorkstationDetailPage from '@/pages/WorkstationDetailsPage';
 import WorkstationsPage from '@/pages/WorkstationsPage';
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
       {
         path: 'workstations',
         element: <WorkstationsPage />,
+      },
+      {
+        path: 'workstation/:id',
+        element: <WorkstationDetailPage />,
       },
     ],
   },

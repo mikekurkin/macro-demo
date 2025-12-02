@@ -23,7 +23,7 @@ export const workstationSchema = z
   })
   .and(
     z.union([
-      z.object({ hasPc: z.literal(false), ipAddress: z.literal('') }),
+      z.object({ hasPc: z.literal(false), ipAddress: z.string().length(0) }),
       z.object({
         hasPc: z.literal(true),
         ipAddress: z
@@ -66,9 +66,9 @@ export function WorkstationDialog({
 
   const [serverError, setServerError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (initialValues) form.reset(initialValues);
-  }, [initialValues]);
+  // useEffect(() => {
+  //   if (initialValues) form.reset(initialValues);
+  // }, [initialValues]);
 
   const hasPc = form.watch('hasPc');
 
@@ -80,9 +80,9 @@ export function WorkstationDialog({
   }, [hasPc]);
 
   useEffect(() => {
-    if (!isOpen) {
-      setServerError(null);
+    if (isOpen) {
       form.reset(initialValues);
+      setServerError(null);
     }
   }, [isOpen]);
 
